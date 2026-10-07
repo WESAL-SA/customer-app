@@ -23,15 +23,24 @@ class OnboardingScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Spacer(),
-              Container(
-                height: 96,
-                width: 96,
-                decoration: BoxDecoration(
-                  color: WesalColors.brandSurface,
-                  borderRadius: BorderRadius.circular(WesalRadii.xl),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(WesalRadii.xl),
+                child: Image.asset(
+                  'assets/images/wesal_logo.jpg',
+                  height: 160,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                  errorBuilder: (_, __, ___) => Container(
+                    height: 96,
+                    width: 96,
+                    decoration: BoxDecoration(
+                      color: WesalColors.brandSurface,
+                      borderRadius: BorderRadius.circular(WesalRadii.xl),
+                    ),
+                    child: const Icon(Icons.local_taxi_rounded,
+                        size: 52, color: WesalColors.brand),
+                  ),
                 ),
-                child: const Icon(Icons.local_taxi_rounded,
-                    size: 52, color: WesalColors.brand),
               ),
               const SizedBox(height: WesalSpacing.xxl),
               Text(l.onboardingTitle,

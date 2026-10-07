@@ -71,6 +71,7 @@ class WesalMap extends StatelessWidget {
             left: WesalSpacing.xl,
             child: _Marker(
               color: WesalColors.brand,
+              foreground: WesalColors.ink,
               icon: Icons.my_location,
               label: pickupLabel!,
             ),
@@ -102,8 +103,14 @@ class WesalMap extends StatelessWidget {
 }
 
 class _Marker extends StatelessWidget {
-  const _Marker({required this.color, required this.icon, required this.label});
+  const _Marker({
+    required this.color,
+    required this.icon,
+    required this.label,
+    this.foreground = Colors.white,
+  });
   final Color color;
+  final Color foreground;
   final IconData icon;
   final String label;
 
@@ -118,15 +125,15 @@ class _Marker extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, color: Colors.white, size: 16),
+          Icon(icon, color: foreground, size: 16),
           const SizedBox(width: 6),
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 140),
             child: Text(
               label,
               overflow: TextOverflow.ellipsis,
-              style: const TextStyle(
-                color: Colors.white,
+              style: TextStyle(
+                color: foreground,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),

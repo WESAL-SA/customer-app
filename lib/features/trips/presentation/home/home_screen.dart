@@ -35,12 +35,19 @@ class HomeScreen extends ConsumerWidget {
               ),
               child: Row(
                 children: [
-                  const Text('Wesal',
-                      style: TextStyle(
-                        color: WesalColors.brand,
-                        fontSize: 22,
-                        fontWeight: FontWeight.w800,
-                      )),
+                  Row(
+                    children: [
+                      const Icon(Icons.location_on,
+                          color: WesalColors.brand, size: 22),
+                      const SizedBox(width: 4),
+                      Text('Wesal',
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.onSurface,
+                            fontSize: 22,
+                            fontWeight: FontWeight.w800,
+                          )),
+                    ],
+                  ),
                   const Spacer(),
                   _CircleButton(
                     icon: Icons.notifications_none,

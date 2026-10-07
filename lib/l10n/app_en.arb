@@ -1,6 +1,7 @@
 {
   "@@locale": "en",
   "appName": "Wesal",
+  "tagline": "We get you there, safely",
 
   "actionContinue": "Continue",
   "actionConfirm": "Confirm",

@@ -15,10 +15,10 @@ abstract final class WesalTheme {
   static ThemeData light() {
     const scheme = ColorScheme.light(
       primary: WesalColors.brand,
-      onPrimary: WesalColors.white,
+      onPrimary: WesalColors.ink, // gold carries dark text
       primaryContainer: WesalColors.brandSurface,
       onPrimaryContainer: WesalColors.brandDark,
-      secondary: WesalColors.brandLight,
+      secondary: WesalColors.brandDark,
       onSecondary: WesalColors.white,
       surface: WesalColors.white,
       onSurface: WesalColors.ink,
@@ -32,12 +32,12 @@ abstract final class WesalTheme {
 
   static ThemeData dark() {
     const scheme = ColorScheme.dark(
-      primary: WesalColors.brandLight,
-      onPrimary: WesalColors.ink,
+      primary: WesalColors.brand,
+      onPrimary: WesalColors.ink, // gold carries dark text
       primaryContainer: WesalColors.brandDark,
       onPrimaryContainer: WesalColors.white,
-      secondary: WesalColors.brand,
-      onSecondary: WesalColors.white,
+      secondary: WesalColors.brandLight,
+      onSecondary: WesalColors.ink,
       surface: WesalColors.darkSurface,
       onSurface: WesalColors.darkInk,
       surfaceContainerHighest: WesalColors.darkElevated,
