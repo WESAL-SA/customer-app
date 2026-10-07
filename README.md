@@ -53,6 +53,29 @@ To connect it for real you implement the domain contracts (below) as
 `!useMockServices`. **No screen or controller changes** — they depend only on the
 interfaces.
 
+## App icon & branding
+
+The theme is Wesal gold (`#D7A93C`) on charcoal-navy (`#0F2D2B`). The launcher
+icon is **rebuilt as high-resolution vector-style geometry** (not an upscaled
+JPEG) by `tool/generate_icon.py`, which outputs:
+
+- `assets/icon/wesal_icon.png` — 1024px full-bleed (iOS + legacy Android).
+- `assets/icon/wesal_icon_foreground.png` — transparent mark (Android adaptive).
+
+To (re)generate the source art: `python3 tool/generate_icon.py` (needs Pillow).
+To produce the platform launcher icons (after `flutter create .`):
+
+```bash
+dart run flutter_launcher_icons
+```
+
+`WesalLogo` (`lib/design_system/components/wesal_logo.dart`) renders the mark
+in-app (splash, onboarding).
+
+> The mark is a faithful recreation from the supplied low-res icon, not a
+> pixel-exact trace. If you have the original vector (SVG/AI), drop it in and
+> point `flutter_launcher_icons.image_path` at a 1024px export of it.
+
 ## Architecture
 
 ```

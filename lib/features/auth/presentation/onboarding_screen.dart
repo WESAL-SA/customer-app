@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../app/router.dart';
-import '../../../design_system/colors.dart';
 import '../../../design_system/components/primary_button.dart';
+import '../../../design_system/components/wesal_logo.dart';
 import '../../../design_system/spacing.dart';
 import '../../../l10n/generated/app_localizations.dart';
 
@@ -23,25 +23,7 @@ class OnboardingScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Spacer(),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(WesalRadii.xl),
-                child: Image.asset(
-                  'assets/images/wesal_logo.jpg',
-                  height: 160,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                  errorBuilder: (_, __, ___) => Container(
-                    height: 96,
-                    width: 96,
-                    decoration: BoxDecoration(
-                      color: WesalColors.brandSurface,
-                      borderRadius: BorderRadius.circular(WesalRadii.xl),
-                    ),
-                    child: const Icon(Icons.local_taxi_rounded,
-                        size: 52, color: WesalColors.brand),
-                  ),
-                ),
-              ),
+              const WesalLogo(size: 104),
               const SizedBox(height: WesalSpacing.xxl),
               Text(l.onboardingTitle,
                   style: Theme.of(context).textTheme.displaySmall),

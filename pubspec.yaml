@@ -43,6 +43,26 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  # Generates platform launcher icons from the brand mark.
+  # Run after `flutter create .`:  dart run flutter_launcher_icons
+  flutter_launcher_icons: ^0.14.1
+
+# App launcher icon configuration (assets/icon/ is produced by
+# tool/generate_icon.py from the brand mark).
+flutter_launcher_icons:
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/icon/wesal_icon.png"
+  background_color_ios: "#0F2D2B"
+  min_sdk_android: 21
+  adaptive_icon_background: "#0F2D2B"
+  adaptive_icon_foreground: "assets/icon/wesal_icon_foreground.png"
+  web:
+    generate: true
+    image_path: "assets/icon/wesal_icon.png"
+    background_color: "#0F2D2B"
+    theme_color: "#D7A93C"
 
 flutter:
   uses-material-design: true
@@ -51,6 +71,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/icon/
 
   # NOTE: Fonts (e.g. an Arabic-first family such as "IBM Plex Sans Arabic"
   # or "Cairo") should be added here once the font files are placed in

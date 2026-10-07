@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../design_system/colors.dart';
+import '../../../design_system/components/wesal_logo.dart';
 import '../../../design_system/spacing.dart';
 import '../../../l10n/generated/app_localizations.dart';
 
@@ -20,22 +21,23 @@ class SplashScreen extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(WesalRadii.xl),
-              child: Image.asset(
-                'assets/images/wesal_logo.jpg',
-                width: 240,
-                fit: BoxFit.cover,
-                // Graceful fallback if the asset is unavailable.
-                errorBuilder: (_, __, ___) => const _WordmarkFallback(),
+            const WesalLogo(size: 132),
+            const SizedBox(height: WesalSpacing.xl),
+            Text(
+              l.appName,
+              style: const TextStyle(
+                color: WesalColors.white,
+                fontSize: 34,
+                fontWeight: FontWeight.w800,
+                letterSpacing: 0.5,
               ),
             ),
-            const SizedBox(height: WesalSpacing.xxl),
+            const SizedBox(height: WesalSpacing.xs),
             Text(
               l.tagline,
               style: const TextStyle(
                 color: WesalColors.brand,
-                fontSize: 16,
+                fontSize: 15,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -51,30 +53,6 @@ class SplashScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class _WordmarkFallback extends StatelessWidget {
-  const _WordmarkFallback();
-
-  @override
-  Widget build(BuildContext context) {
-    return const Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Icon(Icons.location_on, color: WesalColors.brand, size: 56),
-        SizedBox(height: WesalSpacing.sm),
-        Text(
-          'Wesal',
-          style: TextStyle(
-            color: WesalColors.white,
-            fontSize: 40,
-            fontWeight: FontWeight.w800,
-            letterSpacing: 0.5,
-          ),
-        ),
-      ],
     );
   }
 }
