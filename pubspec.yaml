@@ -1,0 +1,66 @@
+name: wesal_customer
+description: Wesal customer (rider) app for the Saudi ride-hailing platform.
+publish_to: "none"
+
+# Version follows <marketing>+<build>. Keep build number monotonic for stores.
+version: 0.1.0+1
+
+environment:
+  sdk: ">=3.6.0 <4.0.0"
+  flutter: ">=3.27.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.5.1
+
+  # Navigation
+  go_router: ^14.2.0
+
+  # i18n
+  intl: ^0.19.0
+
+  # Networking (used by the REAL service implementations; mocks don't hit it)
+  dio: ^5.5.0
+
+  # Secure token storage (never store secrets in plain prefs)
+  flutter_secure_storage: ^9.2.2
+
+  # Local, non-sensitive cache (recent places, language, flags)
+  shared_preferences: ^2.2.3
+
+  # Value equality for models
+  equatable: ^2.0.5
+
+  # Icons
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true # enables gen-l10n from l10n.yaml
+
+  assets:
+    - assets/images/
+    - assets/icons/
+
+  # NOTE: Fonts (e.g. an Arabic-first family such as "IBM Plex Sans Arabic"
+  # or "Cairo") should be added here once the font files are placed in
+  # assets/fonts/. The design system (design_system/typography.dart) already
+  # references a single family token so swapping is a one-line change.
+  # fonts:
+  #   - family: Wesal
+  #     fonts:
+  #       - asset: assets/fonts/Wesal-Regular.ttf
+  #       - asset: assets/fonts/Wesal-Medium.ttf
+  #         weight: 500
+  #       - asset: assets/fonts/Wesal-Bold.ttf
+  #         weight: 700

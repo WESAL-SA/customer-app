@@ -1,0 +1,18 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "lib/l10n/generated/**"
+
+linter:
+  rules:
+    # Keep the app logger (which redacts sensitive data) instead of print.
+    avoid_print: true
+    prefer_const_constructors: true
+    prefer_final_locals: true
+    use_key_in_widget_constructors: true
+    # NOTE: consider enabling `unawaited_futures` once a full `flutter analyze`
+    # pass has been run locally and any intentional fire-and-forget calls have
+    # been wrapped with `unawaited(...)`.
